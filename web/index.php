@@ -26,11 +26,12 @@ $app->post('/validate', function() use($app) {
 
 	$word= $_GET['mensaje'];
 	$hash= $_GET['hash'];
-	if (strcmp($word, $hash) == 0){
-		$answer= $word . '/n true /n' . $hash;
+	$transform = hash('sha256', $word)
+	if (strcmp($transform, $hash) == 0){
+		$answer= $word .  ' true';
   	}
   	else {
-  		$answer=$word . '/n false' . $hash;
+  		$answer= $word . ' false';
   	}
 
   return $answer;
