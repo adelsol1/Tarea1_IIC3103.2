@@ -22,7 +22,7 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->post('/validate', function() use($app) {
+$app->post('/validarFirma', function() use($app) {
 
 	$word= $_GET['mensaje'];
 	$hash= $_GET['hash'];
