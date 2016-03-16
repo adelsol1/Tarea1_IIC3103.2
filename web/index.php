@@ -25,9 +25,16 @@ $app->get('/', function() use($app) {
 $app->post('/validate', function() use($app) {
 
 	$word= $_GET['mensaje'];
-	$value= hash('sha256', $word);
+	$hash= $_GET['hash'];
+	if ($word = $hash){}
+		$answer='true';
+  		
+  	}
+  	else {
+  		$answer='false';
+  	}
 
-  return $value;
+  return $answer;
 });
 
 $app->get('/status', function() use($app) {
