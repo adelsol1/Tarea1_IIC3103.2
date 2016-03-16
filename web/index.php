@@ -22,9 +22,10 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->get('/validate', function() use($app) {
+$app->post('/validate', function() use($app) {
 
-	$value= hash('sha256', 'hello');
+	$word= $_POST['mensaje']
+	$value= hash('sha256', $word);
 
   return $value;
 });
