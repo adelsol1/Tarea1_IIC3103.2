@@ -26,9 +26,8 @@ $app->post('/validate', function() use($app) {
 
 	$word= $_GET['mensaje'];
 	$hash= $_GET['hash'];
-	if ($word = $hash){}
+	if ($word = $hash){
 		$answer='true';
-  		
   	}
   	else {
   		$answer='false';
