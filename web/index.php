@@ -23,8 +23,10 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/validate', function() use($app) {
- 
-  return 'hola';
+
+	$value= hash('sha256', 'hello');
+
+  return $value;
 });
 
 $app->run();
