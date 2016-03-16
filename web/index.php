@@ -34,7 +34,7 @@ $app->post('/validate', function() use($app) {
   		$answer= $word . ' false';
   	}
 
-  return $answer;
+  return $answer . 'funciona!!!';
 });
 
 $app->get('/status', function() use($app) {
