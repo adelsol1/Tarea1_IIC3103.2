@@ -23,8 +23,8 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/validate', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
+ 
+  return 'hola';
 });
 
 $app->run();
