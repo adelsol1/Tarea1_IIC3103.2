@@ -29,4 +29,11 @@ $app->get('/validate', function() use($app) {
   return $value;
 });
 
+$app->get('/status', function() use($app) {
+
+	$value= 'Http 201';
+
+  return $value;
+});
+
 $app->run();
