@@ -27,10 +27,10 @@ $app->post('/validate', function() use($app) {
 	$word= $_GET['mensaje'];
 	$hash= $_GET['hash'];
 	if (strcmp($word, $hash) == 0){
-		$answer='true';
+		$answer= $word . '/n true /n' . $hash;
   	}
   	else {
-  		$answer='false';
+  		$answer=$word . '/n false' . $hash;
   	}
 
   return $answer;
