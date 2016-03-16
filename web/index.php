@@ -26,15 +26,15 @@ $app->post('/validate', function() use($app) {
 
 	$word= $_GET['mensaje'];
 	$hash= $_GET['hash'];
-	$transform = hash('sha256', $word)
+	$transform = hash('sha256', $word);
 	if (strcmp($transform, $hash) == 0){
-		$answer= $word .  ' true';
+		$answer= $word . ' true';
   	}
   	else {
   		$answer= $word . ' false';
   	}
 
-  return $answer . 'funciona!!!';
+  return $answer;
 });
 
 $app->get('/status', function() use($app) {
