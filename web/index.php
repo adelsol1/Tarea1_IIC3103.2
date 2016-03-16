@@ -24,7 +24,7 @@ $app->get('/', function() use($app) {
 
 $app->post('/validate', function() use($app) {
 
-	$word= $_POST['mensaje'];
+	$word= $_GET['mensaje'];
 	$value= hash('sha256', $word);
 
   return $word;
