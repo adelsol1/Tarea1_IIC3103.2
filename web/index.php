@@ -27,7 +27,7 @@ $app->post('/validate', function() use($app) {
 	$word= $_POST['mensaje'];
 	$value= hash('sha256', $word);
 
-  return $value;
+  return $word;
 });
 
 $app->get('/status', function() use($app) {
