@@ -38,10 +38,8 @@ $app->post('/validarFirma', function() use($app) {
 });
 
 $app->get('/status', function() use($app) {
-  var_dump(http_response_code(201));
 	$value= 'Http 201';
-
-  return $value;
+  return new Response('iic!', 201);
 });
 
 $app->run();
