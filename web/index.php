@@ -54,8 +54,8 @@ $app->get('/status', function() use($app) {
 });
 
 $app->get('/text', function() use($app) {
-  $ruta = 'https://s3.amazonaws.com/files.principal/texto.txt'
-  $text = file_get_contents($ruta)
+  $ruta = 'https://s3.amazonaws.com/files.principal/texto.txt';
+  $text = file_get_contents($ruta);
   $hash = hash('sha256', $text);
   return json_encode(array('text' => $text,'hash' => $hash ));
 });
