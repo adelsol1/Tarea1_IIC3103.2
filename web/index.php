@@ -27,7 +27,7 @@ $app->post('/validarFirma', function() use($app) {
 	$word= $_REQUEST['mensaje'];
 	$hash= $_REQUEST['hash'];
 	$transform = hash('sha256', $word);
-	if (strcmp($transform, $hash) == 0){
+	if ($transform== $hash){
 		$answer= true;
   	}
   	else {
