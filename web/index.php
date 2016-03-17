@@ -24,8 +24,8 @@ $app->get('/', function() use($app) {
 
 $app->post('/validarFirma', function() use($app) {
 
-	$word= $_GET['mensaje'];
-	$hash= $_GET['hash'];
+	$word= $_REQUEST['mensaje'];
+	$hash= $_REQUEST['hash'];
 	$transform = hash('sha256', $word);
 	if (strcmp($transform, $hash) == 0){
 		$answer= $word . ' true';
@@ -38,7 +38,7 @@ $app->post('/validarFirma', function() use($app) {
 });
 
 $app->get('/status', function() use($app) {
-
+  var_dump(http_response_code(201));
 	$value= 'Http 201';
 
   return $value;
