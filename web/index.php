@@ -33,8 +33,8 @@ $app->post('/validarFirma', function() use($app) {
   	else {
   		$answer= false;
   	}
-
-  return $answer;
+  	
+  return  $app->json(array('mensaje' => $word,'valido' => $answer ));
 });
 
 $app->get('/status', function() use($app) {
