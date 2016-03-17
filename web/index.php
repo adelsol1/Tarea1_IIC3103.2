@@ -39,7 +39,7 @@ $app->post('/validarFirma', function() use($app) {
 
 $app->get('/status', function() use($app) {
 
-  return json_encode('Http 201')
+  return $app->json_encode('Http 201')
 });
 
 $app->run();
