@@ -34,7 +34,7 @@ $app->post('/validarFirma', function() use($app) {
   		$answer= 'false';
   	}
   	
-  return  $app->json_encode(array('mensaje' => $word,'valido' => $answer ));
+  return json_encode(array('mensaje' => $word,'valido' => $answer ));
 });
 
 $app->get('/status', function() use($app) {
