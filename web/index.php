@@ -28,10 +28,10 @@ $app->post('/validarFirma', function() use($app) {
 	$hash= $_REQUEST['hash'];
 	$transform = hash('sha256', $word);
 	if ($transform== $hash){
-		$answer= 'true';
+		$answer= true;
   	}
   	else {
-  		$answer= 'false';
+  		$answer= false;
   	}
   	
   return json_encode(array('mensaje' => $word,'valido' => $answer ));
