@@ -28,14 +28,22 @@ $app->post('/validarFirma', function() use($app) {
 	$hash= $_REQUEST['hash'];
 	$transform = hash('sha256', $word);
 	$value=strtoupper($transform);
+	if (empty($word)){
+		return $app->json('Http 400', 400);
+	}
+	if (empty($hash)){
+		return $app->json('Http 400', 400);
+	}
 	if ($value==$hash){
 		$answer= true;
+		return json_encode(array('mensaje' => $word,'valido' => $answer ));
   	}
   	else {
   		$answer= false;
+  		return json_encode(array('mensaje' => $word,'valido' => $answer ));
   	}
   	
-  return json_encode(array('mensaje' => $word,'valido' => $answer ));
+  
 });
 
 $app->get('/status', function() use($app) {
